@@ -68,3 +68,6 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 [parameters: ('b', '今天天气不错!!!@', 1)]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
 2022-02-12 21:54:19,476 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:22,065 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:35,377 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:45,735 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
