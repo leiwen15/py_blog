@@ -71,3 +71,47 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2022-02-13 20:23:22,065 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
 2022-02-13 20:23:35,377 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
 2022-02-13 20:23:45,735 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:38:33,831 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:39:52,548 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:40:35,486 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:41:06,446 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:41:16,727 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:43:21,889 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:45:36,035 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:51:53,529 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:52:06,038 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:52:15,808 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:13:29,681 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:15:34,689 ERROR: Exception on /user/b [GET] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
+Traceback (most recent call last):
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\git\py_blog2\app\routes.py", line 74, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "E:\git\py_blog2\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "E:\git\py_blog2\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "E:\git\py_blog2\app\templates\user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2022-02-14 23:23:06,659 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:25:39,951 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
