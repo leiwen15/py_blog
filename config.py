@@ -10,7 +10,7 @@ class Config(object):
     MAIL_PORT = 465
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
-    MAIL_USERNAME = 'leiwen15@qq.com'
+    MAIL_USERNAME = ''
     MAIL_PASSWORD = ''
     # MAIL_SERVER = os.environ.get('MAIL_SERVER')
     # MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
