@@ -1,12 +1,9 @@
-from app import db
-from app.models import User, Post
+from flask_mail import Message
+from app import mail, app
+# import app
 
-u = User(username='john', email='john@example.com')
-# db.session.add(u)
-# db.session.commit()
-users = User.query.all()
-
-print(users)
-# for u in users:
-#     db.session.delete(u)
-# db.session.commit()
+print(app.config['ADMINS'][0])
+msg = Message('test subject', sender=app.config['ADMINS'][0], recipients=['1141677899@qq.com'])
+msg.body = 'text body'
+msg.html = '<h1>HTML body</h1>'
+mail.send(msg)

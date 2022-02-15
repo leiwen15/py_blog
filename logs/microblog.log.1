@@ -1,0 +1,137 @@
+2022-02-12 21:48:12,907 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-12 21:48:31,065 ERROR: Exception on /edit_profile [POST] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
+Traceback (most recent call last):
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\git\py_blog2\app\routes.py", line 91, in edit_profile
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3363, in flush
+    self._flush(objects)
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3463, in _flush
+    flush_context.execute()
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 633, in execute
+    uow,
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 241, in save_obj
+    update,
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1001, in _emit_update_statements
+    statement, multiparams, execution_options=execution_options
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 326, in _execute_on_connection
+    self, multiparams, params, execution_options
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1491, in _execute_clauseelement
+    cache_hit=cache_hit,
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    e, statement, parameters, cursor, context
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2027, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1803, in _execute_context
+    cursor, statement, parameters, context
+  File "e:\git\py_blog2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('b', '今天天气不错!!!@', 1)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-02-12 21:54:19,476 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:22,065 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:35,377 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-13 20:23:45,735 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:38:33,831 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:39:52,548 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:40:35,486 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:41:06,446 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:41:16,727 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:43:21,889 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:45:36,035 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:51:53,529 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:52:06,038 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 22:52:15,808 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:13:29,681 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:15:34,689 ERROR: Exception on /user/b [GET] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
+Traceback (most recent call last):
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\git\py_blog2\app\routes.py", line 74, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "E:\git\py_blog2\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "E:\git\py_blog2\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "E:\git\py_blog2\app\templates\user.html", line 17, in block 'content'
+    {{ form.hidden_tag() }}
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2022-02-14 23:23:06,659 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-14 23:25:39,951 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-15 10:24:04,625 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 12:46:20,197 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 12:54:42,968 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 12:55:57,190 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 12:56:24,673 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 12:56:55,929 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 13:43:14,782 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 13:43:43,493 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 13:54:51,311 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 13:58:16,210 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 16:40:34,722 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 16:40:38,547 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 16:40:43,089 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 17:12:53,711 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 17:18:12,348 INFO: Microblog startup [in D:\own_code\own_git\py_blog\app\__init__.py:45]
+2022-02-15 19:28:25,465 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:45]
+2022-02-15 19:43:14,536 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
+2022-02-15 19:43:59,104 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
+2022-02-15 19:44:43,090 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
+2022-02-15 19:45:00,417 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
