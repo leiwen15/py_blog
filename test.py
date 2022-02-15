@@ -6,7 +6,7 @@ u = User(username='john', email='john@example.com')
 # db.session.commit()
 users = User.query.all()
 
-# print(users)
-for u in users:
-    db.session.delete(u)
-db.session.commit()
+print(users)
+# for u in users:
+#     db.session.delete(u)
+# db.session.commit()
