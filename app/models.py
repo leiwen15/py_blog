@@ -1,16 +1,18 @@
 from datetime import datetime
-from time import time
-import jwt
 from hashlib import md5
-from app import db, login, app
+from time import time
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+import jwt
+from app import app, db, login
 
 
-followers = db.Table('followers',
-                    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
-                    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-                    )
+followers = db.Table(
+    'followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+)
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -24,8 +26,7 @@ class User(UserMixin, db.Model):
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followed_id == id),
-        backref=db.backref('followers', lazy='dynamic'), lazy='dynamic'
-    )
+        backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -51,8 +52,7 @@ class User(UserMixin, db.Model):
 
     def is_following(self, user):
         return self.followed.filter(
-            followers.c.followed_id ==user.id
-        ).count() > 0
+            followers.c.followed_id == user.id).count() > 0
 
     def followed_posts(self):
         followed = Post.query.join(

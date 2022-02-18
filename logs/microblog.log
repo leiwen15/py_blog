@@ -45,3 +45,4 @@ AttributeError: 'str' object has no attribute 'decode'
 2022-02-16 22:17:38,864 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
 2022-02-17 07:41:06,794 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:49]
 2022-02-17 07:52:45,488 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:51]
+2022-02-18 07:56:52,607 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:52]
