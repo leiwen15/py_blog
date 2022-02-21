@@ -1,12 +1,4 @@
-2022-02-15 19:45:36,461 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 19:46:31,001 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 20:15:53,350 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 22:27:54,502 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 22:30:14,912 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 22:35:32,551 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-15 22:36:03,259 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-16 22:09:07,231 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-16 22:09:52,650 ERROR: Exception on /reset_password_request [POST] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
+2022-02-21 22:37:26,351 ERROR: Exception on / [GET] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
 Traceback (most recent call last):
   File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -16,15 +8,45 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "E:\git\py_blog2\app\routes.py", line 165, in reset_password_request
-    send_password_reset_email(user)
-  File "E:\git\py_blog2\app\email.py", line 18, in send_password_reset_email
-    token = user.get_reset_password_token()
-  File "E:\git\py_blog2\app\models.py", line 67, in get_reset_password_token
-    app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
-AttributeError: 'str' object has no attribute 'decode'
-2022-02-16 22:11:36,754 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-16 22:11:46,845 ERROR: Exception on /reset_password_request [POST] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\git\py_blog2\app\main\routes.py", line 38, in index
+    prev_url=prev_url)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "e:\git\py_blog2\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "E:\git\py_blog2\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "E:\git\py_blog2\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "e:\git\py_blog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "E:\git\py_blog2\app\templates\base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "E:\git\py_blog2\app\templates\index.html", line 11, in block 'app_content'
+    {% include '_post.html' %}
+  File "E:\git\py_blog2\app\templates\_post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "e:\git\py_blog2\venv\lib\site-packages\werkzeug\routing.py", line 2315, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2022-02-21 23:00:41,738 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:73]
+2022-02-21 23:01:27,754 ERROR: Exception on /auth/logout [GET] [in e:\git\py_blog2\venv\lib\site-packages\flask\app.py:1458]
 Traceback (most recent call last):
   File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -34,17 +56,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "e:\git\py_blog2\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "E:\git\py_blog2\app\routes.py", line 165, in reset_password_request
-    send_password_reset_email(user)
-  File "E:\git\py_blog2\app\email.py", line 18, in send_password_reset_email
-    token = user.get_reset_password_token()
-  File "E:\git\py_blog2\app\models.py", line 67, in get_reset_password_token
-    app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
-AttributeError: 'str' object has no attribute 'decode'
-2022-02-16 22:13:04,472 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-16 22:17:38,864 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:47]
-2022-02-17 07:41:06,794 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:49]
-2022-02-17 07:52:45,488 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:51]
-2022-02-18 07:56:52,607 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:52]
-2022-02-18 08:08:51,474 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:52]
-2022-02-18 08:09:04,754 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:52]
+  File "E:\git\py_blog2\app\auth\routes.py", line 35, in logout
+    return redirect(url_for('index'))
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "e:\git\py_blog2\venv\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "e:\git\py_blog2\venv\lib\site-packages\werkzeug\routing.py", line 2315, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2022-02-21 23:02:20,317 INFO: Microblog startup [in E:\git\py_blog2\app\__init__.py:73]
