@@ -12,6 +12,7 @@ class Config(object):
     MAIL_USE_SSL = True
     MAIL_USERNAME = ''
     MAIL_PASSWORD = ''
+    ELASTICSEARCH_URL = 'http://localhost:9200'
     # MAIL_SERVER = os.environ.get('MAIL_SERVER')
     # MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
     # MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS')
